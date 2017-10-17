@@ -1,0 +1,10 @@
+<fieldset>
+  <h1>Product List</h1>
+
+  <fieldset *ngFor="let product of products; let idx=index">
+    <p>{{product.name}}</p>
+    <p>{{product.price | currency:'USD':true}}</p>
+    <a (click)="deleteThis(idx)">Delete</a>
+    <a [routerLink]="['edit', idx]">Edit</a>
+  </fieldset>
+</fieldset>
